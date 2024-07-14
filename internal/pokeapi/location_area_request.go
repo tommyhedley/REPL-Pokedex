@@ -17,7 +17,6 @@ func (c *Client) ListLocationAreas(pageUrl *string) (LocationAreasResp, error) {
 
 	data, ok := c.cache.Get(fullUrl)
 	if ok {
-		fmt.Println("cache used")
 		locationAreasResp := LocationAreasResp{}
 		err := json.Unmarshal(data, &locationAreasResp)
 		if err != nil {
